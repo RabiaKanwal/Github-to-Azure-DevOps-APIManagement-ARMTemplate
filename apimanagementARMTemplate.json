@@ -18,6 +18,10 @@
         "type": "string",
         "defaultValue": "Rabia Kanwal"
       },
+         "CorrelationIdForARM": {
+        "type": "string",
+        "defaultValue": "42c4hjf7-fj5n-564l-5f22-56hjk8h786jp"
+      },
       "PublisherEmail": {
         "type": "string",
         "defaultValue": "rabiakanwal593@outlook.com"
