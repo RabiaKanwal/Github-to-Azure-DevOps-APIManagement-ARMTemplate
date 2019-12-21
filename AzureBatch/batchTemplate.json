@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "batchAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "Batch Account Name"
+      }
+    },
+    "storageAccountName": {
+        "type": "string",
+        "metadata": {
+          "description": "Storage Account Name"
+        }
+      }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Batch/batchAccounts",
+      "name": "[parameters('batchAccountName')]",
+      "apiVersion": "2015-12-01",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "ObjectName": "[parameters('batchAccountName')]"
+      },
+      "properties": {
+        "autoStorage": {
+          "storageAccountId": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+        }
+      },
+      "dependsOn": [
+      ]
+    }
+  ],
+  "outputs": {
+  }
+}

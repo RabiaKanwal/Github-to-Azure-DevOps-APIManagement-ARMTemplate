@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "batchAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Batch Account Name"
+            }
+        },
+        "poolName": {
+            "type": "string",
+            "metadata": {
+                "description": "Compute pool name"
+            }
+        },
+        "vmSize": {
+            "type": "string",
+            "metadata": {
+                "description": "The size of VM"
+            }
+        }
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Batch/batchAccounts/pools",
+            "name": "[concat(parameters('batchAccountName'), '/', parameters('poolName'))]",
+            "apiVersion": "2017-09-01",
+            "scale": null,
+            "properties": {
+                "vmSize": "[parameters('vmSize')]",
+                "interNodeCommunication": "Enabled",
+                "maxTasksPerNode": 1,
+                "taskSchedulingPolicy": {
+                    "nodeFillType": "Spread"
+                },
+                "deploymentConfiguration": {
+                    "virtualMachineConfiguration": {
+                        "imageReference": {
+                            "publisher": "Canonical",
+                            "offer": "UbuntuServer",
+                            "sku": "16.04-LTS",
+                            "version": "latest"
+                        },
+                        "nodeAgentSkuId": "batch.node.ubuntu 16.04"
+                    }
+                },
+                "scaleSettings": {
+                    "fixedScale": {
+                        "targetDedicatedNodes": 0,
+                        "targetLowPriorityNodes": 0,
+                        "resizeTimeout": "PT15M"
+                    }
+                }
+            },
+            "dependsOn": [
+            ]
+        }
+    ],
+    "outputs": {}
+}
