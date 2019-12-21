@@ -12,7 +12,7 @@
       },
       "APIManagementInstanceName": {
         "type": "string",
-        "defaultValue": "apimanagementrabia"
+        "defaultValue": "apimanagementRabia"
       },
       "PublisherName": {
         "type": "string",
