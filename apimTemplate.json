@@ -16,11 +16,11 @@
       },
       "PublisherName": {
         "type": "string",
-        "defaultValue": "Amine CHAROT"
+        "defaultValue": "Rabia Kanwal"
       },
       "PublisherEmail": {
         "type": "string",
-        "defaultValue": "charotamine@outlook.fr"
+        "defaultValue": "rabiakanwal593@outlook.com"
       }
     },
     "variables": {},
