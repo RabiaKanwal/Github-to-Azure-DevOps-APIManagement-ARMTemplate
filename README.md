@@ -13,3 +13,7 @@ By using these principles all Azure services and resources can be provisioned on
 
 
 ![Screen2](https://github.com/RabiaKanwal/GithubtoAzureDevOps_APIManagementARMTemplate/blob/master/Screens/Screenshot%202019-12-21%20at%2022.32.38.png)
+
+
+
+![Screen3](https://github.com/RabiaKanwal/GithubtoAzureDevOps_APIManagementARMTemplate/blob/master/Screens/screenshot3.jpeg)
